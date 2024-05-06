@@ -1,0 +1,13 @@
+<div class="border rounded shadow-sm overflow-hidden d-flex flex-row mb-3 mb-4 h-md-250">
+    <div class="flex-column" style="padding: 15px 15px 15px 15px; max-width: 70%;">
+        <strong class="d-inline-block mb-2 text-primary font-weight-bold">{{ project.project_type }}</strong>
+        <h3 class="mb-0">{{ project.project_name }}</h3>
+        <div class="mb-1 text-muted">{{ project.date_creation }}</div>
+        <div class="mb-1 text-muted">{{ project.platform }}</div>
+        <p class="card-text mb-auto" style="word-wrap: break-word">{{ project.project_short_description }}</p>
+        <a href={{ project.archive_name }} class="stretched-link">Скачать проект</a>
+    </div>
+    <div class="text-center">
+        тут будет обложка проекта
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="limiter">
+    <div class="some-container">
+        <div class="wrap-with-shadow" style="width: 50%">
+            <div class="col mb-2">
+                {% for project in projects %}
+                    {% include 'project_card.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

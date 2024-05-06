@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="limiter">
+    <div class="some-container">
+        <div class="wrap-with-shadow" style="width: 500px;">
+            <h3 class="text-dark">Регистрация</h3>
+            {% if message %}
+            <div class="alert alert-warning text-center" role="alert">{{ message }}</div>
+            {% endif %}
+            <form action="" method="post" class="d-flex flex-column mb-3">
+                {{ form.hidden_tag() }}
+                <div class="p-2"> {{ form.email.label }}</div>
+                <div class="p-2"> {{ form.email(class="form-control", type="email") }}</div>
+                {% for error in form.email.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2"> {{ form.password.label }}</div>
+                <div class="p-2"> {{ form.password(class="form-control", type="password") }}</div>
+                {% for error in form.password.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2"> {{ form.confirm_password.label }}</div>
+                <div class="p-2"> {{ form.confirm_password(class="form-control", type="password") }}</div>
+                {% for error in form.confirm_password.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2"> {{ form.name.label }}</div>
+                <div class="p-2"> {{ form.name(class="form-control") }}</div>
+                {% for error in form.name.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2"> {{ form.user_role.label }}</div>
+                <div class="p-2"> {{ form.user_role(class="form-control", type="radio") }}</div>
+                {% for error in form.user_role.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2"> {{ form.platform.label }}</div>
+                <div class="p-2"> {{ form.platform(class="form-control") }}</div>
+                {% for error in form.platform.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2"> {{ form.about.label }}</div>
+                <div class="p-2"> {{ form.about(class="form-control", type="text") }}</div>
+                {% for error in form.about.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div>{{ form.submit(type="submit", class="btn btn-primary") }}</div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

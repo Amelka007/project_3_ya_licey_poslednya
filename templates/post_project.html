@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="limiter">
+    <div class="some-container">
+        <div class="wrap-with-shadow" style="width: 500px;">
+            <h3 class="text-dark">Выложить проект</h3>
+            {% if message %}
+            <div class="alert alert-warning text-center" role="alert">{{ message }}</div>
+            {% endif %}
+            <form action="" method="post" class="d-flex flex-column mb-3" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="p-2"> {{ form.name.label }}</div>
+                <div class="p-2"> {{ form.name(class="form-control") }}</div>
+                {% for error in form.name.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2">{{ form.proj_type.label }}</div>
+                <div class="p-2">{{ form.proj_type(class="form-control", type="radio") }}</div>
+                {% for error in form.proj_type.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2">{{ form.platform.label }}</div>
+                <div class="p-2">{{ form.platform(class="form-control") }}</div>
+                {% for error in form.platform.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                    <div class="p-2">{{ form.short_description.label }}</div>
+                    <div class="p-2">{{ form.short_description(class="form-control", type="text") }}</div>
+                {% for error in form.short_description.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2">{{ form.detailed_description.label }}</div>
+                <div class="p-2">{{ form.detailed_description(class="form-control", type="text") }}</div>
+                {% for error in form.detailed_description.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                    <div class="p-2">{{ form.archive.label }}</div>
+                    <div class="p-2">{{ form.archive(class="form-control", type="file") }}</div>
+                {% for error in form.archive.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div class="p-2">{{ form.image.label }}</div>
+                <div class="p-2">{{ form.image(class="form-control", type="file") }}</div>
+                {% for error in form.image.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <div>{{ form.submit(type="submit", class="btn btn-primary") }}</div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
